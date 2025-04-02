@@ -1,11 +1,6 @@
 %% Práctica 1: Procesamiento básico de imágenes
-clc; % Limpia la ventana de comandos (Command Window)
-clearvars; % Borra todas las variables del workspace para comenzar limpio
-close all; % Esta línea cierra todas las ventanas gráficas abiertas 
-
-%Se agrega la ruta especificada al path
-addpath('C:\Users\ejocs\Documents\MATLAB\vc-fib\sampleImages\');
-savepath; %Actualiza el archivo pathdef.m, para que sea permanente
+clc; clearvars; close all;
+% addpath('I:\vc\sample images');
 
 %% Carga y visualización básica de una imagen
 im = imread('Floppy.bmp'); % Lee la imagen 'Floppy.bmp' y la almacena en la variable 'im'

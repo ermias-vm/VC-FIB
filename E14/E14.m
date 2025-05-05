@@ -45,16 +45,20 @@ title('hue-sat sin_cos');
 %% Ejercicio: separar café
 im = imread('cafe.tif');
 figure, imshow(im,[]), title('Imagen de entrada');
+
 % Binarización de la imagen usando el método de Otsu
 bw = im2bw(im, graythresh(im));
 figure, imshow(bw), title('Binarización por Otsu');
 td = bwdist(bw);
 figure, mesh(td);
+
 % Encontrar mínimos regionales
 marca = imhmin(-td, 2);
+
 % Aplicar Watershed para separar los objetos conectados
 eti = watershed(marca);
 figure, imshow(bw | ~(eti > 0)), title("Separación del café con marcadores");
+
 % Etiquetar los objetos separados
 eti = bwlabel(~(bw | ~(eti > 0)));
 figure, imshow(eti,[]), title('Café etiquetado');
